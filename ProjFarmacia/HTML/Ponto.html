@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Ponto - Drogaria Ceará</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .ponto-box {
+      max-width: 500px;
+      margin: auto;
+      margin-top: 8%;
+      padding: 2rem;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+        
+        <strong>Drogaria Ceará - Admin</strong>
+      </a>
+    </div>
+  </nav>
+  <div class="ponto-box">
+    <h3 class="text-center text-dark mb-4">Registro de Ponto</h3>
+    <p><strong>Funcionário:</strong> <span id="nome-funcionario">Carlos Henrique</span></p>
+
+    <div class="d-grid gap-3 mt-4">
+      <button class="btn btn-success" id="entradaBtn">Registrar Entrada</button>
+      <button class="btn btn-danger" id="saidaBtn">Registrar Saída</button>
+    </div>
+  </div>
+
+  <script>
+    const nomeFuncionario = "Carlos Henrique"; // Essa informação pode vir do login depois
+
+    document.getElementById("nome-funcionario").innerText = nomeFuncionario;
+
+    document.getElementById("entradaBtn").addEventListener("click", () => {
+      const horario = new Date().toISOString();
+      console.log("Entrada registrada:", { nomeFuncionario, horario });
+
+      // Futuro: fetch('/api/ponto/entrada', { ... })
+      alert("Entrada registrada com sucesso!");
+    });
+
+    document.getElementById("saidaBtn").addEventListener("click", () => {
+      const horario = new Date().toISOString();
+      console.log("Saída registrada:", { nomeFuncionario, horario });
+
+      // Futuro: fetch('/api/ponto/saida', { ... })
+      alert("Saída registrada com sucesso!");
+    });
+  </script>
+</body>
+</html>
